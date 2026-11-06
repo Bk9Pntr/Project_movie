@@ -1,0 +1,28 @@
+{
+  /*
+   * TypeScript 設定ファイル
+   * - Vite + React (TypeScript) 用
+   * - このファイルがないと vite-env.d.ts が「開いている間だけ」有効になり、
+   *   CSS の import で TS2882 エラーが出るため追加した
+   */
+  "compilerOptions": {
+    "target": "ES2022", // 出力する JavaScript のバージョン
+    "lib": [ "ES2022", "DOM", "DOM.Iterable" ], // ブラウザ向けの型定義を使用
+    "module": "ESNext",
+    "moduleResolution": "bundler", // Vite などのバンドラー向けのモジュール解決
+    "jsx": "react-jsx", // React 17 以降の JSX 変換（import React が不要）
+    "allowJs": true, // .js / .jsx ファイルも混在可能にする
+    "noEmit": true, // ビルドは Vite が行うため tsc は出力しない
+    "isolatedModules": true,
+    "skipLibCheck": true, // node_modules 内の型チェックを省略（高速化）
+    "strict": true, // 厳密な型チェックを有効化
+    "allowImportingTsExtensions": true,
+
+    // Vite の型定義を読み込む（*.css や画像 import の型宣言を含む）
+    // TypeScript 6 系では types の既定値が空のため、明示的に指定が必要
+    "types": [ "vite/client" ]
+  },
+
+  // src 配下を常にプロジェクトに含める（開いていないファイルも対象）
+  "include": [ "src" ]
+}
