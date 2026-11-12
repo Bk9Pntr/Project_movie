@@ -6,6 +6,7 @@
 // ==================================================
 import { useState } from "react"; // ボタンの選択状態管理
 import "./SCR-0300_MovieList.css";
+import DLG0001TagEdit from "./DLG-0001_TagEdit"; // 編集ボタンダイアログの表示
 
 // 画面遷移用のProps
 type Props = {
@@ -17,6 +18,7 @@ function SCR0300MovieList({ onBack }: Props) {
     // 選択状態を管理する変数を設定(すべて表示:all、お気に入り:favorite、気になる映画:active))
     const [selectedFilter, setSelectedFilter] = useState("all");
 
+    const [isTagEditOpen, setIsTagEditOpen] = useState(false);
     return (
         <div>
             <h1>映画一覧画面</h1>
@@ -80,8 +82,11 @@ function SCR0300MovieList({ onBack }: Props) {
                                     <button type="button" className="btn">
                                         <i className="bi bi-bookmark-fill"></i>
                                     </button>
-                                    <button type="button" className="btn">
+                                    {/* <button type="button" className="btn">
                                         <i className="bi bi-brush"></i>
+                                    </button> */}
+                                    <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>
+                                        <i className="bi bi-bookmark-fill"></i>
                                     </button>
                                 </div>
                             </div>
@@ -166,7 +171,7 @@ function SCR0300MovieList({ onBack }: Props) {
                             <div className="movie-info-header">
                                 <span>作品タイトル</span>
                                 <div className="movie-info-buttons">
-                                    <button type="button" className="btn"><i className="bi bi-bookmark-fill"></i></button>
+                                    <button type="button" className="btn"><i className="bi bi-bookmark-fill"></i></button>                                    
                                     <button type="button" className="btn"><i className="bi bi-brush"></i></button>
                                 </div>
                             </div>
@@ -224,8 +229,17 @@ function SCR0300MovieList({ onBack }: Props) {
             {/* <button onClick={onBack}>
                 ホームに戻る
             </button> */}
+
+            {/* タグ編集ダイアログ */}
+            {
+                isTagEditOpen && (
+                    <DLG0001TagEdit />
+                )
+            }
+
         </div>
     );
 }
+
 
 export default SCR0300MovieList;
