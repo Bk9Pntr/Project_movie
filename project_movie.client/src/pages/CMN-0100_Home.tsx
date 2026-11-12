@@ -6,7 +6,12 @@
 // ==================================================
 import "./CMN-0100_Home.css";
 
-function CMN0100Home() {
+// 画面遷移用のProps
+type Props = {
+    onNavigate: () => void;
+};
+
+function CMN0100Home({ onNavigate }: Props) {
     return (
         <div>
             <h1>鑑賞レポート</h1>
@@ -125,7 +130,11 @@ function CMN0100Home() {
                                         <div className="movie-date">#インド映画</div>
                                     </div>
 
-                                    <i className="bi bi-arrow-right-circle align-self-center arrow-icon"></i>
+                                    <i
+                                        className="bi bi-arrow-right-circle align-self-center arrow-icon"
+                                        onClick={onNavigate}
+                                        style={{ cursor: "pointer" }}
+                                    ></i>
                                 </div>
 
                             </div>
