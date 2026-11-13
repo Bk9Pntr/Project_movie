@@ -1,0 +1,62 @@
+/* 背景の半透明レイヤー */
+.modal-overlay {
+    position: fixed; /* 画面全体に固定表示 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; /* Flexboxレイアウトを適用 */
+    justify-content: center; /* 横方向の中央に配置 */
+    align-items: center; /* 縦方向の中央に配置 */
+    z-index: 1050;
+}
+
+/* モーダル本体 */
+.modal-dialog-custom {
+    width: 500px;
+    max-width: 90%;
+    background-color: white;
+    border-radius: 8px; /* 四隅を8pxの角丸に設定 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* モーダルに影を付けて立体感を表現 */
+}
+
+/* ヘッダー */
+.modal-header {
+    display: flex; /* Flexboxレイアウトを適用 */
+    justify-content: space-between; /* 子要素を左右両端に配置 */
+    align-items: center; /* 子要素を縦方向の中央に配置 */
+    padding: 16px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* ボディ */
+.modal-body {
+    padding: 20px;
+}
+
+/* フッター */
+.modal-footer {
+    display: flex; /* Flexboxレイアウトを適用 */
+    justify-content: flex-end; /* 子要素を右寄せに配置 */
+    padding: 16px;
+    border-top: 1px solid #dee2e6;
+}
+
+/* #region --------------------------- 保存済みカテゴリ --------------------------- */
+.saved-category {
+    margin-top: 10px;
+
+    span {
+        color: #7F7F7F;
+        font-size:15px;
+    }
+}
+/* #endregion */
+
+

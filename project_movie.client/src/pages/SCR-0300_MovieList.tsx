@@ -6,9 +6,9 @@
 // ==================================================
 import { useState } from "react"; // ボタンの選択状態管理
 import "./SCR-0300_MovieList.css";
-import DLG0001TagEdit from "./DLG-0001_TagEdit"; // 編集ボタンダイアログの表示
+import DLG0001TagEdit from "./DLG-0001_TagEdit"; // ダイアログの表示状態を管理するStateの初期定義
 
-// 画面遷移用のProps
+// 戻るボタン用のProps
 type Props = {
     onBack: () => void;
 };
@@ -86,7 +86,7 @@ function SCR0300MovieList({ onBack }: Props) {
                                         <i className="bi bi-brush"></i>
                                     </button> */}
                                     <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>
-                                        <i className="bi bi-bookmark-fill"></i>
+                                        <i className="bi bi bi-brush"></i>
                                     </button>
                                 </div>
                             </div>
@@ -231,11 +231,10 @@ function SCR0300MovieList({ onBack }: Props) {
             </button> */}
 
             {/* タグ編集ダイアログ */}
-            {
-                isTagEditOpen && (
-                    <DLG0001TagEdit />
-                )
-            }
+            <DLG0001TagEdit
+                show={isTagEditOpen}
+                onClose={() => setIsTagEditOpen(false)}
+            />
 
         </div>
     );

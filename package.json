@@ -3,6 +3,7 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "bootstrap": "^5.3.9",
     "react-router-dom": "^7.18.5"
   }
 }
