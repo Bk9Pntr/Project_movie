@@ -10,6 +10,7 @@ import { useState } from 'react'; // ReactからuseStateを読み込む
 // 画面コンポーネントの読み込み
 import CMN0100Home from './pages/CMN-0100_Home';
 import SCR0300MovieList from './pages/SCR-0300_MovieList';
+import SCR0200ViewingRecord from './pages/SCR-0200_.ViewingRecord';
 
 function App() {
     // 現在のページをhomeに設定
@@ -17,16 +18,24 @@ function App() {
 
     return (
         <div>
+       　　 {/* ホーム画面 */}
             {currentPage === 'home' && (
                 <CMN0100Home
                     onNavigate={() => setCurrentPage('movieListPage')}
                 />
             )}
 
+            {/* 映画一覧画面 */}
             {currentPage === 'movieListPage' && (
                 <SCR0300MovieList
-                    onBack={() => setCurrentPage('home')}
+                    onBack={() => setCurrentPage('home')} /*Homeへ戻る*/
+                    onNavigate={() => setCurrentPage('viewingRecordPage')} /*映画追加画面へ遷移*/
                 />
+            )}
+
+            {/* 鑑賞記録 */}
+            {currentPage === 'viewingRecordPage' && (
+                <SCR0200ViewingRecord />
             )}
         </div>
     );

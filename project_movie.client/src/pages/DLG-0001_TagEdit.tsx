@@ -72,7 +72,7 @@ function DLG0001TagEdit({ show, onClose }: Props) {
                                 <span>登録済みタグ</span>
 
                                 <div className="category-container">
-                                    
+
                                 </div>
                             </div>
 

@@ -133,7 +133,6 @@ function CMN0100Home({ onNavigate }: Props) {
                                     <i
                                         className="bi bi-arrow-right-circle align-self-center arrow-icon"
                                         onClick={onNavigate}
-                                        style={{ cursor: "pointer" }}
                                     ></i>
                                 </div>
 

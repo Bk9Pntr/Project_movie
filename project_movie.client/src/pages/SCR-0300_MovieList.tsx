@@ -8,12 +8,13 @@ import { useState } from "react"; // ボタンの選択状態管理
 import "./SCR-0300_MovieList.css";
 import DLG0001TagEdit from "./DLG-0001_TagEdit"; // ダイアログの表示状態を管理するStateの初期定義
 
-// 戻るボタン用のProps
+// 画面遷移用のProps
 type Props = {
-    onBack: () => void;
+    onBack: () => void; // ホーム画面に戻るための関数
+    onNavigate: () => void; //　映画追加画面に遷移するための関数
 };
 
-function SCR0300MovieList({ onBack }: Props) {
+function SCR0300MovieList({ onBack, onNavigate }: Props) {
 
     // 選択状態を管理する変数を設定(すべて表示:all、お気に入り:favorite、気になる映画:active))
     const [selectedFilter, setSelectedFilter] = useState("all");
@@ -44,7 +45,7 @@ function SCR0300MovieList({ onBack }: Props) {
             <div className="add-container">
                 <div className="d-flex justify-content-between align-items-center w-100">
                     <span>視聴した映画：50件</span>
-                    <button type="button" className="btn btn-primary">+映画を追加</button>
+                    <button type="button" className="btn btn-primary" onClick={onNavigate}>+映画を追加</button>
                 </div>
             </div>
 
