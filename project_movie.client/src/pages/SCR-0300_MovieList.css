@@ -20,7 +20,6 @@
     padding: 10px;
     box-sizing: border-box; /* 枠線を含めて横幅100% */
     border-radius: 10px; /* 角丸 */
-
     /* 映画情報を囲むコンテナ */
     .movie-item {
         margin-top: 12px;
@@ -33,7 +32,6 @@
         gap: 12px;
         background-color: #fff;
     }
-
     /* 映画画像表示領域 */
     .movie-image {
         width: 120px;
@@ -43,72 +41,55 @@
         flex-shrink: 0; /* 親要素の幅に合わせて縮小しない */
         background-color: #B5B5B5;
     }
-
     /* #region 映画情報全体 */
     .movie-info {
         flex: 1;
         min-width: 0;
-
         /* 情報を縦方向に並べる */
         display: flex;
         flex-direction: column; /* 親の幅に合わせて縮小しない */
         gap: 8px;
     }
-
     /* 作品タイトルとボタン */
     .movie-info-header {
         display: flex;
-        justify-content: space-between;  /* 要素同士の間隔を均等に広げ、両端に配置 */
+        justify-content: space-between; /* 要素同士の間隔を均等に広げ、両端に配置 */
         align-items: center;
         font-weight: bold;
         font-size: clamp(14px, 2vw, 20px); /* 画面サイズにより文字サイズ変更 */
     }
-
     /* アイコンボタン */
     .movie-info-buttons {
         display: flex;
         gap: 5px;
     }
-
-    /* ボタン自体の背景色・枠線 */
-    .movie-info-buttons .btn {
-        background-color: #eee;
-        border: none;
-        color: black;
-        box-shadow: none;
-    }
-
-    /* ブックマークアイコンの色 */
-    .movie-info-buttons .bi-bookmark-fill,
-    .movie-info-buttons .bi-brush {
-        color: gray;
-    }
-
-    /* マウスを乗せたときも背景色を維持 */
-    .movie-info-buttons .btn:hover,
-    .movie-info-buttons .btn:focus,
-    .movie-info-buttons .btn:active {
-        background-color: #eee;
-        border: none;
-        color: black;
-        box-shadow: none;
-    }
-
-    /* 映画の説明情報 */
-    .movie-info-description {
-        font-size: 12px;
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap; /* 横幅が足りない場合は折り返す */
-        align-items: center; /* 各項目を縦方向の中央に揃える */
-    }
+        /* ボタン自体の背景色・枠線 */
+        .movie-info-buttons .btn {
+            background-color: #eee;
+            border: none;
+            color: black;
+            box-shadow: none;
+        }
+        /* ブックマークアイコンの色 */
+        .movie-info-buttons .bi-bookmark-fill,
+        .movie-info-buttons .bi-brush {
+            color: gray;
+        }
+        /* マウスを乗せたときも背景色を維持 */
+        .movie-info-buttons .btn:hover,
+        .movie-info-buttons .btn:focus,
+        .movie-info-buttons .btn:active {
+            background-color: #eee;
+            border: none;
+            color: black;
+            box-shadow: none;
+        }
 
     /* 区切り線 */
     .movie-info hr {
         margin: 1px 0;
         border-color: #999999;
     }
-
     /* タグ一覧 */
     .movie-info-tags {
         display: flex;
@@ -125,8 +106,7 @@
             line-height: 1;
         }
     }
-
-    /* 評価 */
+    /* 映画の説明情報・評価 */
     .movie-info-description {
         font-size: 12px;
         display: flex;
@@ -145,7 +125,6 @@
             margin-bottom: 6px; /* 評価の数字の位置を調整 */
         }
     }
-
     /* あらすじのテキスト */
     .movie-info-text {
         text-align: left;

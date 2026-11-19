@@ -49,22 +49,24 @@ function CMN0100Home({ onNavigate }: Props) {
 
             {/* 最近見た映画 */}
             <div className="movie-list">
-                <div className="accordion accordion-flush" id="movieAccordion1">
+                <div className="accordion accordion-flush" id="works-info-Accordion">
                     <div className="accordion-item">
 
+                        {/* アコーディオン見出し */}
                         <h1 className="accordion-header">
                             <button
                                 className="accordion-button collapsed"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#movieCollapse1"
+                                data-bs-target="#movieCollapse1" // どの部分を開閉するのか指定
                                 aria-expanded="false"
-                                aria-controls="movieCollapse1"
+                                aria-controls="movieCollapse1" // 操作対象の要素を指定
                             >
                                 最近見た映画
                             </button>
                         </h1>
 
+                        {/* 開閉されるコンテンツ */}
                         <div
                             id="movieCollapse1"
                             className="accordion-collapse collapse show"
@@ -149,19 +151,21 @@ function CMN0100Home({ onNavigate }: Props) {
                 <div className="accordion accordion-flush" id="movieAccordion2">
                     <div className="accordion-item">
 
+                        {/* アコーディオン見出し */}
                         <h1 className="accordion-header">
                             <button
                                 className="accordion-button collapsed"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#movieCollapse2"
+                                data-bs-target="#movieCollapse2"  // どの部分を開閉するのか指定
                                 aria-expanded="false"
-                                aria-controls="movieCollapse2"
+                                aria-controls="movieCollapse2" // 操作対象の要素を指定
                             >
                                 好きな映画の傾向
                             </button>
                         </h1>
 
+                        {/* 開閉されるコンテンツ */}
                         <div
                             id="movieCollapse2"
                             className="accordion-collapse collapse"

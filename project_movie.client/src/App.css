@@ -68,7 +68,6 @@ h2 {
     .btn-group .btn:not(.active):hover,
     .btn-group .btn:not(.active):focus,
     .btn-group .btn:not(.active):active {
-        background-color:;
         color: #B3B3B3;
         border-color: gray;
     }
@@ -85,3 +84,44 @@ h2 {
 
 /* #endregion */
 
+/* #region --------------------------- アコーディオン設定 --------------------------- */
+.accordion-button {
+    font-size: 17px;
+    font-weight: 600;
+    color: #08060d;
+    background-color: #FFFFFF;
+    border-radius: 10px 10px 0 0; /* 角丸 */
+}
+
+/* アコーディオンを開いたときの背景色 */
+.accordion-button:not(.collapsed) {
+    background-color: #FFFFFF;
+    color: inherit;
+    box-shadow: none;
+    border-radius: 10px 10px 0 0 !important;
+}
+
+/* フォーカス時の枠線・影も無効化 */
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* アコーディオン全体の角丸 */
+.accordion {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom:12px;
+}
+
+/* アコーディオン項目の角丸 */
+.accordion-item {
+    border-radius: 8px;
+}
+
+.accordion-body {
+    padding: 0 20px 20px 20px;
+}
+/* #endregion */

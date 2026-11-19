@@ -19,7 +19,8 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
     // 選択状態を管理する変数を設定(すべて表示:all、お気に入り:favorite、気になる映画:active))
     const [selectedFilter, setSelectedFilter] = useState("all");
 
-    const [isTagEditOpen, setIsTagEditOpen] = useState(false);
+    // タグ編集ダイアログの表示状態を管理するStateの
+    // const [isTagEditOpen, setIsTagEditOpen] = useState(false);
     return (
         <div>
             <h1>映画一覧画面</h1>
@@ -83,12 +84,12 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
                                     <button type="button" className="btn">
                                         <i className="bi bi-bookmark-fill"></i>
                                     </button>
-                                    {/* <button type="button" className="btn">
+                                    <button type="button" className="btn">
                                         <i className="bi bi-brush"></i>
-                                    </button> */}
-                                    <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>
-                                        <i className="bi bi bi-brush"></i>
                                     </button>
+                                    {/* <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>
+                                        <i className="bi bi bi-brush"></i>
+                                    </button> */}
                                 </div>
                             </div>
 
@@ -232,10 +233,10 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
             </button> */}
 
             {/* タグ編集ダイアログ */}
-            <DLG0001TagEdit
+            {/* <DLG0001TagEdit
                 show={isTagEditOpen}
                 onClose={() => setIsTagEditOpen(false)}
-            />
+            /> */}
 
         </div>
     );

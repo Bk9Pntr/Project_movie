@@ -1,0 +1,269 @@
+/* #region --------------------------- 画面内共通設定 --------------------------- */
+/* 作品情報：共通設定 */
+.works-input-title,
+.works-input-item,
+.works-input-img,
+.works-input-comment,
+.record-tag-category,
+.record-trends-stars {
+    h2 {
+        padding: 0;
+    }
+}
+
+/* h2のmargin共通設定 */
+.works-input-title,
+.works-input-img,
+.works-input-comment,
+.record-tag-category,
+.record-trends-stars {
+    h2 {
+        margin: 0;
+    }
+}
+
+.works-input-title,
+.works-input-img {
+    input {
+        margin-bottom: 10px;
+    }
+}
+
+/*必須マークの色設定 */
+.required-mark {
+    color: red;
+}
+
+/* #endregion */
+
+
+/* #region --------------------------- タイトル --------------------------- */
+
+.works-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    h2,
+    h3 {
+        color: #08060d;
+    }
+
+    h2 {
+        font-size: 16px;
+        font-weight: 350;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: right;
+
+        .required-mark {
+            color: red;
+        }
+    }
+}
+
+/* #endregion */
+
+/* #region --------------------------- 作品情報 --------------------------- */
+
+/* 公開年数・上映時間 */
+.works-input-group {
+    display: flex; /* 横並びに配置 */
+    justify-content: flex-start; /* 左寄せ */
+    align-items: flex-start; /* 上揃え */
+    gap: 20px;
+    /* 各入力項目 */
+    .works-input-item {
+        display: flex; /* Flexboxを使用 */
+        flex-direction: column; /* 縦並びに配置 */
+        align-items: flex-start; /* 左寄せ */
+        margin-bottom: 10px;
+
+        h2 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        input {
+            width: 120px;
+            margin: 0;
+            box-sizing: border-box; /* 幅にpaddingとborderを含める */
+        }
+        /* 入力欄と単位の親要素 */
+        .input-unit {
+            position: relative; /* 単位の絶対配置の基準にする */
+
+            input {
+                padding-right: 30px; /* 右側に単位表示用の余白を確保 */
+            }
+            /* 入力欄の中に表示する単位 */
+            span {
+                position: absolute; /* 入力欄を基準に絶対配置 */
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+                color: #08060d;
+                pointer-events: none; /* クリック操作を無効にする */
+            }
+        }
+    }
+}
+
+/* 画像挿入 */
+.works-input-img {
+
+    .input-group {
+        /* inputと参照ボタンの高さを統一 */
+        input[type="text"],
+        button {
+            height: 40px;
+            box-sizing: border-box;
+        }
+        /* 参照ボタンの色設定 */
+        button {
+            background-color: #DBDBDB;
+            color: gray;
+            border: 1px solid gray;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: #DBDBDB;
+                color: gray;
+                border: 1px solid gray;
+            }
+        }
+    }
+}
+
+/* #endregion */
+
+
+
+/* #region --------------------------- タグ選択 --------------------------- */
+
+/* 選択済みタグ全体 */
+.record-selected-tags h2 {
+    margin: 10px 0 0 0;
+    padding-left: 0;
+}
+
+/* 選択済みタグの配置 */
+.selected-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* タグ1つ分 */
+.record-tag-item {
+    display: flex; /* タグ名と削除ボタンを横並びにする */
+    align-items: center; /* 垂直方向の中央に揃える */
+    justify-content: space-between; /* タグ名と削除ボタンを両端に配置する */
+    gap: 12px;
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+}
+
+/* タグ名 */
+.record-tag-name {
+    text-align: left;
+}
+
+/* タグ削除ボタン */
+.record-tag-close {
+    border: none;
+    background: none;
+    color: #888;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    line-height: 1; /* 行の高さを文字サイズに合わせる */
+}
+
+/* タグ一覧のスクロール枠 */
+.record-tags-list {
+    width: 100%;
+    height: clamp(200px, 35vh, 300px);
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* タグ一覧の配置 */
+.record-tags-list-inner {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    align-items: flex-start; /* 左寄せ */
+    gap: 10px;
+}
+
+/* 選択可能なタグ */
+.record-tag-option {
+    width: 100%;
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    text-align: left;
+}
+
+
+/* 選択済みのタグ */
+.record-tag-option.selected,
+.record-tag-option:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    border-color: #ddd;
+}
+/* #endregion */
+
+/* #region --------------------------- 自分の評価 --------------------------- */
+
+.record-trends-stars {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    border-bottom: 1px solid #ccc;
+
+    h2 {
+        margin: 0;
+    }
+
+    i {
+        font-size: 20px;
+        color: #ccc;
+        cursor: pointer;
+
+        &.active {
+            color: #f1c40f;
+        }
+    }
+}
+
+/* 現在の評価値 */
+.rating-value {
+    color: #E58008;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* 最大評価値 */
+.rating-max {
+    color: #08060d;
+}
+
+/* #endregion */
