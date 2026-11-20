@@ -95,7 +95,7 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
                                             <i className="bi bi-bookmark-fill"></i>
                                         </button>
                                     </div>
-                                    <button type="button" className="btn brush-btn">
+                                    <button type="button" className="btn brush-btn" onClick={onNavigate}>
                                         <i className="bi bi-brush"></i>
                                     </button>
                                     {/* <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>

@@ -221,8 +221,12 @@ function SCR0200ViewingRecord() {
 
                                 {/* 選択済みタグ */}
                                 <div className="record-selected-tags">
-                                    <h2>選択済みタグ</h2>
-
+                                   
+                                    {/* タグ管理ボタン */}
+                                    <div className="selected-tags-header">
+                                        <h2>選択済みタグ</h2>
+                                        <button type="button" className="btn btn-secondary">タグ管理</button>
+                                    </div>
                                     <div className="selected-tags">
                                         {selectedTags.map((tag) => (
                                             <span
@@ -248,6 +252,8 @@ function SCR0200ViewingRecord() {
                                             </span>
                                         ))}
                                     </div>
+
+                                    
 
                                     {/* 選択タグリスト */}
                                     <div className="record-tags-list">
@@ -297,7 +303,7 @@ function SCR0200ViewingRecord() {
                                 aria-expanded="false"
                                 aria-controls="viewing-record-Collapse"
                             >
-                                好きな映画の傾向
+                                視聴記録
                             </button>
                         </h1>
 
