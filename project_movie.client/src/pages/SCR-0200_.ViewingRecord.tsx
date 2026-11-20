@@ -6,7 +6,7 @@
 // ==================================================
 import "./SCR-0200_.ViewingRecord.css";
 import { useState } from "react"; // ReactからuseStateを読み込む
-
+import DLG0001TagEdit from "./DLG-0001_TagEdit"; // ダイアログの表示状態を管理するStateの初期定義
 
 function SCR0200ViewingRecord() {
 
@@ -74,6 +74,8 @@ function SCR0200ViewingRecord() {
     // お気に入り状態を管理
     const [isFavorite, setIsFavorite] = useState(false);
 
+    // タグ編集ダイアログの表示状態を管理するStateの
+    const [isTagEditOpen, setIsTagEditOpen] = useState(false);
 
     return (
         <div>
@@ -221,11 +223,11 @@ function SCR0200ViewingRecord() {
 
                                 {/* 選択済みタグ */}
                                 <div className="record-selected-tags">
-                                   
+
                                     {/* タグ管理ボタン */}
                                     <div className="selected-tags-header">
                                         <h2>選択済みタグ</h2>
-                                        <button type="button" className="btn btn-secondary">タグ管理</button>
+                                        <button type="button" className="btn btn-secondary" onClick={() => setIsTagEditOpen(true)}>タグ管理</button>
                                     </div>
                                     <div className="selected-tags">
                                         {selectedTags.map((tag) => (
@@ -253,7 +255,7 @@ function SCR0200ViewingRecord() {
                                         ))}
                                     </div>
 
-                                    
+
 
                                     {/* 選択タグリスト */}
                                     <div className="record-tags-list">
@@ -356,7 +358,11 @@ function SCR0200ViewingRecord() {
                     </div>
                 </div>
             </div>
-
+            {/* タグ編集ダイアログ */}
+            <DLG0001TagEdit
+                show={isTagEditOpen}
+                onClose={() => setIsTagEditOpen(false)}
+            />
         </div>
     );
 }

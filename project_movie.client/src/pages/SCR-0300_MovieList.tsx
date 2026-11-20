@@ -6,7 +6,6 @@
 // ==================================================
 import { useState } from "react"; // ボタンの選択状態管理
 import "./SCR-0300_MovieList.css";
-import DLG0001TagEdit from "./DLG-0001_TagEdit"; // ダイアログの表示状態を管理するStateの初期定義
 
 // 画面遷移用のProps
 type Props = {
@@ -22,8 +21,6 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
     // お気に入り状態
     const [isFavorite, setIsFavorite] = useState(false);
 
-    // タグ編集ダイアログの表示状態を管理するStateの
-    // const [isTagEditOpen, setIsTagEditOpen] = useState(false);
     return (
         <div>
             <h1>映画一覧画面</h1>
@@ -98,9 +95,6 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
                                     <button type="button" className="btn brush-btn" onClick={onNavigate}>
                                         <i className="bi bi-brush"></i>
                                     </button>
-                                    {/* <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>
-                                        <i className="bi bi bi-brush"></i>
-                                    </button> */}
                                 </div>
                             </div>
 
@@ -184,7 +178,7 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
                             <div className="movie-info-header">
                                 <span>作品タイトル</span>
                                 <div className="movie-info-buttons">
-                                    <button type="button" className="btn"><i className="bi bi-bookmark-fill"></i></button>                                    
+                                    <button type="button" className="btn"><i className="bi bi-bookmark-fill"></i></button>
                                     <button type="button" className="btn"><i className="bi bi-brush"></i></button>
                                 </div>
                             </div>
@@ -242,12 +236,6 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
             {/* <button onClick={onBack}>
                 ホームに戻る
             </button> */}
-
-            {/* タグ編集ダイアログ */}
-            {/* <DLG0001TagEdit
-                show={isTagEditOpen}
-                onClose={() => setIsTagEditOpen(false)}
-            /> */}
 
         </div>
     );
