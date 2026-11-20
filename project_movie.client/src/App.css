@@ -125,3 +125,31 @@ h2 {
     padding: 0 20px 20px 20px;
 }
 /* #endregion */
+
+/* #region --------------------------- お気に入りボタン --------------------------- */
+
+.favorite-btn .btn {
+    color: #808080;
+    background-color: #EEEEEE;
+    border: none; /* 枠線を消す */
+    width: 40px;
+    height: 40px;
+    padding: 8px 6px;
+    border-radius: 10px; /* 角を丸く */
+    transition: none; /* 色の変化を即時にする */
+}
+
+/* お気に入り登録時 */
+.favorite-btn .btn.active {
+    color: #EDFBFF;
+    background-color: #3185D8;
+}
+
+/* 通常時のクリック中 */
+.favorite-btn .btn:not(.active):active,
+.favorite-btn .btn:not(.active):focus {
+    color: #999;
+    background-color: #EEEEEE;
+}
+
+/* #endregion */

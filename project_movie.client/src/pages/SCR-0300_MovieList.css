@@ -58,32 +58,40 @@
         font-weight: bold;
         font-size: clamp(14px, 2vw, 20px); /* 画面サイズにより文字サイズ変更 */
     }
-    /* アイコンボタン */
+    /* アイコンボタンを横並びにする */
+    .movie-info-buttons {
+        display: flex; /* 横並び */
+        align-items: center; /* 縦方向の中央揃え */
+        gap: 8px; /* ボタン同士の間隔 */
+    }
+    /* タグ編集ボタンの配置 */
     .movie-info-buttons {
         display: flex;
         gap: 5px;
     }
-        /* ボタン自体の背景色・枠線 */
-        .movie-info-buttons .btn {
-            background-color: #eee;
-            border: none;
-            color: black;
-            box-shadow: none;
-        }
-        /* ブックマークアイコンの色 */
-        .movie-info-buttons .bi-bookmark-fill,
-        .movie-info-buttons .bi-brush {
-            color: gray;
-        }
-        /* マウスを乗せたときも背景色を維持 */
-        .movie-info-buttons .btn:hover,
-        .movie-info-buttons .btn:focus,
-        .movie-info-buttons .btn:active {
-            background-color: #eee;
-            border: none;
-            color: black;
-            box-shadow: none;
-        }
+
+    /* タグ編集ボタン自体の背景色・枠線 */
+    .movie-info-buttons .brush-btn {
+        background-color: #eee;
+        border: none;
+        color: black;
+        box-shadow: none;
+    }
+    
+    /* タグ編集アイコンの色 */
+    .movie-info-buttons .brush-btn .bi-brush {
+        color: gray;
+    }
+
+    /* マウスを乗せたときも背景色を維持 */
+    .movie-info-buttons .brush-btn:hover,
+    .movie-info-buttons .brush-btn:focus,
+    .movie-info-buttons .brush-btn:active {
+        background-color: #eee;
+        border: none;
+        color: black;
+        box-shadow: none;
+    }
 
     /* 区切り線 */
     .movie-info hr {

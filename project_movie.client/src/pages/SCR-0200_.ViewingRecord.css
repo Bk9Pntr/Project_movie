@@ -160,6 +160,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin: 5px 0;
 }
 
 /* タグ1つ分 */
@@ -244,7 +245,7 @@
     }
 
     i {
-        font-size: 20px;
+        font-size: 25px;
         color: #ccc;
         cursor: pointer;
 
@@ -257,7 +258,7 @@
 /* 現在の評価値 */
 .rating-value {
     color: #E58008;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -266,4 +267,37 @@
     color: #08060d;
 }
 
+.record-favorite {
+    /* お気に入りボタンと文字を横並び */
+    .favorite-btn {
+        display: flex; /* 横並び */
+        align-items: center; /* ボタンを文字の縦中央に配置 */
+        gap: 12px; /* ボタンと文字の間隔 */
+        margin-top: 4px;
+        padding: 10px 2px;
+        background-color: white;
+    }
+    /* 文字を縦並び */
+    .favorite-text {
+        display: flex; /* 横並び */
+        flex-direction: column; /* 子要素を縦方向に並べる */
+    }
+
+        .favorite-text h2 {
+            margin: 0;
+            padding-left: 0;
+            font-size: 20px;
+        }
+
+        .favorite-text h3 {
+            margin: 0;
+            padding-left: 0;
+            font-size: 12px;
+            color: #9E9E9E;
+        }
+    /* お気に入り登録時 */
+    .favorite-btn.active {
+        background-color: #F3F9FF;
+    }
+}
 /* #endregion */

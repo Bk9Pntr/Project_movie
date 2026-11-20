@@ -19,6 +19,9 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
     // 選択状態を管理する変数を設定(すべて表示:all、お気に入り:favorite、気になる映画:active))
     const [selectedFilter, setSelectedFilter] = useState("all");
 
+    // お気に入り状態
+    const [isFavorite, setIsFavorite] = useState(false);
+
     // タグ編集ダイアログの表示状態を管理するStateの
     // const [isTagEditOpen, setIsTagEditOpen] = useState(false);
     return (
@@ -72,6 +75,7 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
             <div className="movie-list-container">
                 <div className="movie-list">
                     <div className="movie-item">
+
                         {/* 映画画像 */}
                         <div className="movie-image"></div>
 
@@ -81,10 +85,17 @@ function SCR0300MovieList({ onBack, onNavigate }: Props) {
                             <div className="movie-info-header">
                                 <span>作品タイトル</span>
                                 <div className="movie-info-buttons">
-                                    <button type="button" className="btn">
-                                        <i className="bi bi-bookmark-fill"></i>
-                                    </button>
-                                    <button type="button" className="btn">
+                                    {/* お気に入りボタン */}
+                                    <div className="favorite-btn">
+                                        <button
+                                            type="button"
+                                            className={`btn ${isFavorite ? "active" : ""}`}
+                                            onClick={() => setIsFavorite(!isFavorite)}
+                                        >
+                                            <i className="bi bi-bookmark-fill"></i>
+                                        </button>
+                                    </div>
+                                    <button type="button" className="btn brush-btn">
                                         <i className="bi bi-brush"></i>
                                     </button>
                                     {/* <button type="button" className="btn" onClick={() => setIsTagEditOpen(true)}>

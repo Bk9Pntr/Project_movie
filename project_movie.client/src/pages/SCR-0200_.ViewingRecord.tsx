@@ -71,6 +71,9 @@ function SCR0200ViewingRecord() {
     // 自分の評価を管理
     const [rating, setRating] = useState(0);
 
+    // お気に入り状態を管理
+    const [isFavorite, setIsFavorite] = useState(false);
+
 
     return (
         <div>
@@ -305,7 +308,7 @@ function SCR0200ViewingRecord() {
                             <div className="accordion-body">
                                 {/* 自分の評価 */}
                                 <div className="record-trends-stars">
-                                    <h2>自分の評価<span className="required-mark">※</span></h2>
+                                    <h2>自分の評価</h2>
 
                                     {/* 星と評価値を横並び */}
                                     <div className="d-flex align-items-center gap-3">
@@ -324,12 +327,23 @@ function SCR0200ViewingRecord() {
                                             <span className="rating-max"> / 5</span>
                                         </div>
                                     </div>
-                                    <div className="">
 
-
+                                </div>
+                                <div className="record-favorite">
+                                    <div className={`favorite-btn ${isFavorite ? "active" : ""}`}>
+                                        <button
+                                            type="button"
+                                            className={`btn ${isFavorite ? "active" : ""}`}
+                                            onClick={() => setIsFavorite(!isFavorite)}
+                                        >
+                                            <i className="bi bi-bookmark-fill"></i>
+                                        </button>
+                                        <div className="favorite-text">
+                                            <h2>お気に入りに追加</h2>
+                                            <h3>お気に入り一覧に保存します</h3>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 
